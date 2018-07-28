@@ -47,9 +47,9 @@
    <left>
       <VBox prefHeight="805.0" prefWidth="120.0" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btnMain" mnemonicParsing="false" onAction="#btnMain_OnAction" text="Main" />
-            <Button fx:id="btnTrello" mnemonicParsing="false" onAction="#btnTrello_OnAction" text="Trello" />
-            <Button fx:id="btnWunderlist" mnemonicParsing="false" onAction="#btnWunderlist_OnAction" text="Wunderlist" />
+            <Button fx:id="btnMain" mnemonicParsing="false" onAction="#btnMain_OnAction" prefHeight="26.0" prefWidth="1268.0" text="Main" />
+            <Button fx:id="btnTrello" mnemonicParsing="false" onAction="#btnTrello_OnAction" prefHeight="26.0" prefWidth="1530.0" text="Trello" />
+            <Button fx:id="btnWunderlist" mnemonicParsing="false" onAction="#btnWunderlist_OnAction" prefHeight="26.0" prefWidth="1633.0" text="Wunderlist" />
          </children>
          <padding>
             <Insets left="10.0" right="10.0" top="20.0" />
