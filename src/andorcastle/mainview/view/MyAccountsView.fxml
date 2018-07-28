@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="andorcastle.mainview.controller.MyAccountsController">
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="600.0" spacing="30.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="ivProfilPicture" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#ivProfilPicture_OnMouseClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../util/defprofil.png" />
+               </image></ImageView>
+            <Label text="WhoAmI" />
+         </children>
+         <BorderPane.margin>
+            <Insets left="15.0" />
+         </BorderPane.margin>
+      </HBox>
+   </top>
+   <center>
+      <GridPane alignment="CENTER_LEFT" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="188.0" minWidth="10.0" prefWidth="58.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="329.0" minWidth="10.0" prefWidth="329.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <BorderPane.margin>
+            <Insets left="15.0" right="10.0" />
+         </BorderPane.margin>
+         <children>
+            <Label text="My Account" />
+            <Label text="My Trello" GridPane.rowIndex="1" />
+            <Label text="My Wunderlist" GridPane.rowIndex="2" />
+            <TextField fx:id="txtfMyAccount" GridPane.columnIndex="1" />
+            <TextField fx:id="txtfMyTrello" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtfMyWunderlist" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="2">
+               <children>
+                  <Button mnemonicParsing="false" text="Button" />
+                  <Button mnemonicParsing="false" text="Button" />
+                  <Button mnemonicParsing="false" text="Button" />
+               </children>
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <children>
+                  <Button mnemonicParsing="false" text="Button" />
+                  <Button mnemonicParsing="false" text="Button" />
+                  <Button mnemonicParsing="false" text="Button" />
+               </children>
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <children>
+                  <Button mnemonicParsing="false" text="Button" />
+                  <Button mnemonicParsing="false" text="Button" />
+                  <Button mnemonicParsing="false" text="Button" />
+               </children>
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+            </HBox>
+         </children>
+      </GridPane>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER_RIGHT" prefHeight="0.0" prefWidth="600.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" text="Button" />
+            <Button cancelButton="true" mnemonicParsing="false" text="Cancel" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" right="20.0" top="10.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <padding>
+      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+   </padding>
+</BorderPane>
