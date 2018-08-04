@@ -1,4 +1,4 @@
-package andorcastle;
+package andorcastle.services;
 
 public class eAndorCastleEnumerations {
     public static eAndorCastleEnumerations instance = null;
