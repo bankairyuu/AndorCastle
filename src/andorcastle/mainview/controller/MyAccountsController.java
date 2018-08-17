@@ -26,7 +26,7 @@ public class MyAccountsController {
         fileChooser.setTitle("Open new profile picture");
         fileChooser.showOpenDialog(getPrimaryStage());
 
-        
+
     }
 
     public void btnExitCancel_onAction(ActionEvent actionEvent) {
