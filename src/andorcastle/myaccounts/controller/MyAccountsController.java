@@ -5,14 +5,13 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 
-import java.awt.*;
 import java.io.File;
-import java.io.IOException;
 
 import static andorcastle.Main.getPrimaryStage;
 
@@ -26,10 +25,14 @@ public class MyAccountsController {
     ImageView ivProfilPicture;
 
     @FXML
+    Label lWhoAmI;
+
+    @FXML
     public void initialize(){
         btnExitCancel.setText(isModified ? "Cancel" : "Exit");
         btnExitCancel.setCancelButton(isModified);
         ivProfilPicture.setImage(OnlineData.getInstance().getImage());
+        lWhoAmI.setText(OnlineData.getInstance().getWhoAmI());
     }
 
     public void ivProfilPicture_OnMouseClicked(MouseEvent mouseEvent) {

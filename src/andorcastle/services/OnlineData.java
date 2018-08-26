@@ -28,6 +28,15 @@ public class OnlineData {
 
     private eSurface activeSurface;
     private Image image;
+    private String WhoAmI;
+
+    public String getWhoAmI() {
+        return WhoAmI;
+    }
+
+    public void setWhoAmI(String whoAmI) {
+        WhoAmI = whoAmI;
+    }
 
     public Image getImage() {
         return image;
@@ -68,7 +77,17 @@ public class OnlineData {
     }
 
     private void loadUserDatas(){
+        File userData = new File("user.dat");
+        ObjectMapper mapper = new ObjectMapper();
 
+        try {
+            profileData = mapper.readValue(userData, ProfileData.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        setImage(new Image(profileData.getProfilePicPath()));
+        setWhoAmI(profileData.getWhoAmI());
     }
 
     private void flush(){

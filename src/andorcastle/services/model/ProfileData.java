@@ -1,5 +1,7 @@
 package andorcastle.services.model;
 
+import javafx.scene.image.Image;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,6 +9,7 @@ public class ProfileData {
     private String whoAmI;
     private String key;
     private String profilePicPath;
+    private Image profilPic;
     private Map<ProfilType, EmbeddedProfile> embeddedProfileMap;
 
     public ProfileData() {
@@ -19,6 +22,14 @@ public class ProfileData {
 
     public void setProfilePicPath(String profilePicPath) {
         this.profilePicPath = profilePicPath;
+    }
+
+    public Image getProfilPic() {
+        return profilPic;
+    }
+
+    public void setProfilPic(Image profilPic) {
+        this.profilPic = profilPic;
     }
 
     public String getWhoAmI() {
