@@ -16,10 +16,7 @@
    <top>
       <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="600.0" spacing="30.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="ivProfilPicture" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#ivProfilPicture_OnMouseClicked" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../util/defprofil.png" />
-               </image></ImageView>
+            <ImageView fx:id="ivProfilPicture" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#ivProfilPicture_OnMouseClicked" pickOnBounds="true" preserveRatio="true"/>
             <Label text="WhoAmI" />
          </children>
          <BorderPane.margin>
