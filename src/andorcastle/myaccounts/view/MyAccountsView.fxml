@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="andorcastle.mainview.controller.MyAccountsController">
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="andorcastle.myaccounts.controller.MyAccountsController">
    <top>
       <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="600.0" spacing="30.0" BorderPane.alignment="CENTER">
          <children>

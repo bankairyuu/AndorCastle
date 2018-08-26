@@ -2,7 +2,7 @@ package andorcastle;
 
 import java.io.IOException;
 
-import andorcastle.services.eAndorCastleEnumerations;
+import andorcastle.services.OnlineData;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,7 +14,7 @@ public class Main extends Application {
     private static Stage primaryStage;
 
     @Override public void start(Stage stage) throws IOException {
-        eAndorCastleEnumerations.getInstance().setActiveComponent(eAndorCastleEnumerations.components.Main);
+        OnlineData.getInstance();
 
         Parent root = FXMLLoader.load(getClass().getResource("MainView.fxml"));
         stage.setTitle("AndorCastle");

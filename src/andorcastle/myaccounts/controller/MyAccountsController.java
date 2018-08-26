@@ -1,4 +1,4 @@
-package andorcastle.mainview.controller;
+package andorcastle.myaccounts.controller;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;

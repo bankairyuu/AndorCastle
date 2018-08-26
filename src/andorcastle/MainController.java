@@ -1,6 +1,7 @@
 package andorcastle;
 
-import andorcastle.services.eAndorCastleEnumerations;
+import andorcastle.enumerations.eSurface;
+import andorcastle.services.OnlineData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,8 +30,8 @@ public class MainController {
     }
 
     public void btnMain_OnAction(ActionEvent actionEvent) {
-        if (!eAndorCastleEnumerations.getInstance().getActiveComponent().equals(eAndorCastleEnumerations.components.Main)){
-            eAndorCastleEnumerations.getInstance().setActiveComponent(eAndorCastleEnumerations.components.Main);
+        if (!OnlineData.getInstance().getActiveSurface().equals(eSurface.Main)){
+            OnlineData.getInstance().setActiveSurface(eSurface.Main);
             try {
                 buildRequesteView();
             } catch (IOException e) {
@@ -40,8 +41,8 @@ public class MainController {
     }
 
     public void btnTrello_OnAction(ActionEvent actionEvent) {
-        if (!eAndorCastleEnumerations.getInstance().getActiveComponent().equals(eAndorCastleEnumerations.components.Trello)){
-            eAndorCastleEnumerations.getInstance().setActiveComponent(eAndorCastleEnumerations.components.Trello);
+        if (!OnlineData.getInstance().getActiveSurface().equals(eSurface.Trello)){
+            OnlineData.getInstance().setActiveSurface(eSurface.Trello);
             try {
                 buildRequesteView();
             } catch (IOException e) {
@@ -51,8 +52,8 @@ public class MainController {
     }
 
     public void btnWunderlist_OnAction(ActionEvent actionEvent) {
-        if (!eAndorCastleEnumerations.getInstance().getActiveComponent().equals(eAndorCastleEnumerations.components.Wunderlist)){
-            eAndorCastleEnumerations.getInstance().setActiveComponent(eAndorCastleEnumerations.components.Wunderlist);
+        if (!OnlineData.getInstance().getActiveSurface().equals(eSurface.Wunderlist)){
+            OnlineData.getInstance().setActiveSurface(eSurface.Wunderlist);
             try {
                 buildRequesteView();
             } catch (IOException e) {
@@ -64,29 +65,29 @@ public class MainController {
     private void buildRequesteView() throws IOException {
         spltpMainSplitPane.getItems().clear();
         FXMLLoader loader;
-        switch (eAndorCastleEnumerations.getInstance().getActiveComponent()){
+        switch (OnlineData.getInstance().getActiveSurface()){
             case Main:
-                loader = new FXMLLoader(getClass().getResource("mainview/view/MyAccountsView.fxml"));
-                BorderPane myaccountspane = loader.load();
-                spltpMainSplitPane.getItems().addAll(myaccountspane);
+                loader = new FXMLLoader(getClass().getResource("myaccounts/view/MyAccountsView.fxml"));
+                BorderPane myAccountsPane = loader.load();
+                spltpMainSplitPane.getItems().addAll(myAccountsPane);
                 break;
 
             case Trello:
                 loader = new FXMLLoader(getClass().getResource("trello/view/TrelloView.fxml"));
-                SplitPane trellopane = loader.load();
-                spltpMainSplitPane.getItems().addAll(trellopane);
+                SplitPane trelloPane = loader.load();
+                spltpMainSplitPane.getItems().addAll(trelloPane);
                 break;
 
             case Wunderlist:
                 loader = new FXMLLoader(getClass().getResource("wunderlist/view/WunderlistView.fxml"));
-                Pane wunderlistpane = loader.load();
-                spltpMainSplitPane.getItems().addAll(wunderlistpane);
+                Pane wunderlistPane = loader.load();
+                spltpMainSplitPane.getItems().addAll(wunderlistPane);
                 break;
 
             default:
-                loader = new FXMLLoader(getClass().getResource("mainview/view/MyAccountsView.fxml"));
-                BorderPane defpane = loader.load();
-                spltpMainSplitPane.getItems().addAll(defpane);
+                loader = new FXMLLoader(getClass().getResource("myaccounts/view/MyAccountsView.fxml"));
+                BorderPane defPane = loader.load();
+                spltpMainSplitPane.getItems().addAll(defPane);
                 break;
         }
     }
