@@ -2,9 +2,11 @@ package andorcastle.services;
 
 import andorcastle.enumerations.eSurface;
 import andorcastle.services.model.ProfileData;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.scene.image.Image;
 
 import java.io.File;
+import java.io.IOException;
 
 public class OnlineData {
 // --- / Singleton / ----
@@ -12,8 +14,9 @@ public class OnlineData {
     private static OnlineData instance;
     private OnlineData() {
         activeSurface = eSurface.Main;
-        userData();
         profileData = new ProfileData();
+
+        userData();
     }
     public static OnlineData getInstance() {
         if (instance == null)
@@ -57,6 +60,10 @@ public class OnlineData {
         File file = new File(classLoader.getResource("profile/defprofil.png").getFile());
         setImage(new Image(file.toURI().toString()));
 
+        profileData.setWhoAmI("Who am I?");
+        profileData.setKey("key");
+        profileData.setProfilePicPath(file.toURI().toString());
+
         flush();
     }
 
@@ -66,5 +73,12 @@ public class OnlineData {
 
     private void flush(){
         File userData = new File("user.dat");
+        ObjectMapper mapper = new ObjectMapper();
+
+        try {
+            mapper.writeValue(userData, profileData);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

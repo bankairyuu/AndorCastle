@@ -1,40 +1,43 @@
 package andorcastle.services.model;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ProfileData {
-    String profilePictureURL;
-    String profileName;
-    TrelloData trelloData;
-    WunderlistData wunderlistData;
+    private String whoAmI;
+    private String key;
+    private String profilePicPath;
+    private Map<ProfilType, EmbeddedProfile> embeddedProfileMap;
 
-    public String getProfilePictureURL() {
-        return profilePictureURL;
+    public ProfileData() {
+        embeddedProfileMap = new HashMap<>();
     }
 
-    public void setProfilePictureURL(String profilePictureURL) {
-        this.profilePictureURL = profilePictureURL;
+    public String getProfilePicPath() {
+        return profilePicPath;
     }
 
-    public String getProfileName() {
-        return profileName;
+    public void setProfilePicPath(String profilePicPath) {
+        this.profilePicPath = profilePicPath;
     }
 
-    public void setProfileName(String profileName) {
-        this.profileName = profileName;
+    public String getWhoAmI() {
+        return whoAmI;
     }
 
-    public TrelloData getTrelloData() {
-        return trelloData;
+    public void setWhoAmI(String whoAmI) {
+        this.whoAmI = whoAmI;
     }
 
-    public void setTrelloData(TrelloData trelloData) {
-        this.trelloData = trelloData;
+    public String getKey() {
+        return key;
     }
 
-    public WunderlistData getWunderlistData() {
-        return wunderlistData;
+    public void setKey(String key) {
+        this.key = key;
     }
 
-    public void setWunderlistData(WunderlistData wunderlistData) {
-        this.wunderlistData = wunderlistData;
+    public Map<ProfilType, EmbeddedProfile> getEmbeddedProfileMap() {
+        return embeddedProfileMap;
     }
 }
